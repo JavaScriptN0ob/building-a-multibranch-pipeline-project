@@ -16,7 +16,17 @@ echo 'need to be downloaded after this Pipeline''s initial run for a given'
 echo 'branch.'
 set -x
 npm install serve
+set +x
+
+echo 'Due to npm package serve installed globally could result serve.js not found'
+echo 'I found this on stackoverflow: https://stackoverflow.com/questions/55529912/npm-command-serve-not-found-although-it-is-installed'
+echo 'Decided to remove serve package gloablly'
+set -x
 npm uninstall -g serve 
+set +x
+
+echo 'After uninstall serve globally, need to install in the project folder'
+set -x
 npm i -S serve
 set +x
 
