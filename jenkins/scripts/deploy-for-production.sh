@@ -18,18 +18,6 @@ set -x
 npm install serve
 set +x
 
-echo 'Due to npm package serve installed globally could result serve.js not found'
-echo 'I found this on stackoverflow: https://stackoverflow.com/questions/55529912/npm-command-serve-not-found-although-it-is-installed'
-echo 'Decided to remove serve package gloablly'
-set -x
-npm uninstall -g serve 
-set +x
-
-echo 'After uninstall serve globally, need to install in the project folder'
-set -x
-npm i -S serve
-set +x
-
 echo 'The following "serve" command runs the npm serve module (downloaded'
 echo 'above) deploys your Node.js/React application (built above in production'
 echo 'mode) for production and makes the application available for web browsing.'
@@ -40,7 +28,7 @@ echo 'is followed by another command that retrieves the process ID (PID) value'
 echo 'of the previously run process (i.e. "serve") and writes this value to'
 echo 'the file ".pidfile".'
 set -x
-./node_modules/serve/bin/serve.js -c 0 -s build &
+serve build &
 sleep 1
 echo $! > .pidfile
 set +x
