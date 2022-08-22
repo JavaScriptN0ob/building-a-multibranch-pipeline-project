@@ -16,6 +16,8 @@ echo 'need to be downloaded after this Pipeline''s initial run for a given'
 echo 'branch.'
 set -x
 npm install serve
+npm uninstall -g serve 
+npm i -S serve
 set +x
 
 echo 'The following "serve" command runs the npm serve module (downloaded'
