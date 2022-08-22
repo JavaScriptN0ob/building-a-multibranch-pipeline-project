@@ -15,7 +15,8 @@ echo '"/var/jenkins_home/workspace/"), which means that this module should not'
 echo 'need to be downloaded after this Pipeline''s initial run for a given'
 echo 'branch.'
 set -x
-npm install --global serve
+npm install serve &
+sleep 1
 set +x
 
 echo 'The following "serve" command runs the npm serve module (downloaded'
