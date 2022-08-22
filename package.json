@@ -12,6 +12,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "serve -l http://localhost:5000/"
+    "serve": "serve -p 5000 build"
   }
 }
